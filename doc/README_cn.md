@@ -1,6 +1,6 @@
 # pyDHgripper: 使用Python控制DH夹爪
 
-[[EN](./README.md)] | [中文]
+[[EN](../README.md)] | [中文]
 
 ## 描述
 
