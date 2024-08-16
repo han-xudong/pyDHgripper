@@ -4,7 +4,7 @@
 
 ## Description
 
-PyDHgripper is a python library that allows you to control the DH gripper with Python. The DH gripper is a kind of robot gripper. It is widely used in the field of robot control. This project is based on the serial communication protocol of the DH gripper. The types of DH gripper controlled with this library includes AG-95, DH-3, and PGE series.
+PyDHgripper is a Python library that allows you to control the DH gripper with Python. The DH gripper is a kind of robot gripper. It is widely used in the field of robot control. This project is based on the serial communication protocol of the DH gripper. The types of DH gripper controlled with this library includes AG-95, DH-3, and PGE series.
 
 ## Hardware Requirements
 
