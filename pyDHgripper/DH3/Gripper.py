@@ -158,9 +158,9 @@ class Gripper(object):
         else:
             time.sleep(0.01)
             return
-
-    def init_state(self):
-        '''Initialize the gripper.
+        
+    def init_feedback(self):
+        '''Initialize the feedback.
         
         Args:
             None
@@ -172,8 +172,22 @@ class Gripper(object):
         self.write_uart(modbus_high_addr=0x08, 
                         modbus_low_addr=0x01, 
                         val=-1)
+        
+    def init_state(self):
+        '''Initialize the gripper.
+        
+        Args:
+            None
+            
+        Returns:
+            None
+        '''
 
-    def read_force(self):
+        self.write_uart(modbus_high_addr=0x08, 
+                        modbus_low_addr=0x02, 
+                        val=0)
+
+    def read_open_force(self):
         '''Read the force.
         
         Args:
@@ -188,8 +202,8 @@ class Gripper(object):
                                 is_set=False)
         return force
 
-    def set_force(self, 
-                  val):
+    def set_open_force(self, 
+                       val):
         '''Set the force.
         
         Args:
@@ -204,6 +218,39 @@ class Gripper(object):
                  val_max=90)
         self.write_uart(modbus_high_addr=0x05, 
                         modbus_low_addr=0x02, 
+                        val=val)
+        
+    def read_close_force(self):
+        '''Read the force.
+        
+        Args:
+            None
+            
+        Returns:
+            force: The force value.
+        '''
+
+        force = self.write_uart(modbus_high_addr=0x05, 
+                                modbus_low_addr=0x03, 
+                                is_set=False)
+        return force
+    
+    def set_close_force(self,
+                        val):
+        '''Set the force.
+        
+        Args:
+            val: The force value.
+            
+        Returns:
+            None
+        '''
+
+        in_range(val, 
+                 val_min=10, 
+                 val_max=90)
+        self.write_uart(modbus_high_addr=0x05, 
+                        modbus_low_addr=0x03, 
                         val=val)
         
     def read_pos(self):

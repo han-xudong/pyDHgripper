@@ -183,61 +183,6 @@ class Gripper(object):
                         modbus_low_addr=0x00, 
                         val=165)
 
-    def init_feedback(self):
-        '''Initialize the feedback.
-
-        Args:
-            None
-
-        Returns:
-            None
-        '''
-
-        rdata = self.write_uart(modbus_high_addr=0x02, 
-                                modbus_low_addr=0x00, 
-                                is_set=False)
-        while rdata == 0:
-            self.init_state()
-            rdata = self.write_uart(modbus_high_addr=0x02, 
-                                    modbus_low_addr=0x00, 
-                                    is_set=False)
-        while rdata == 2:
-            time.sleep(0.1)
-            rdata = self.write_uart(modbus_high_addr=0x02, 
-                                    modbus_low_addr=0x00, 
-                                    is_set=False)
-
-
-    def read_state(self):
-        '''Read the state of the gripper.
-
-        Args:
-            None
-
-        Returns:
-            rdata: The data read from the serial port.
-        '''
-
-        rdata = self.write_uart(modbus_high_addr=0x02, 
-                                modbus_low_addr=0x01, 
-                                is_set=False)
-        return rdata
-
-    def read_pos(self):
-        '''Read the position of the gripper.
-
-        Args:
-            None
-
-        Returns:
-            rdata: The data read from the serial port.
-        '''
-
-        rdata = self.write_uart(modbus_high_addr=0x02, 
-                                modbus_low_addr=0x02, 
-                                is_set=False)
-        return rdata
-
     def set_force(self, 
                   val):
         '''Set the force of the gripper.
@@ -297,8 +242,8 @@ class Gripper(object):
         '''
 
         in_range(val, 
-                 val_min=0, 
-                 val_max=1000)
+                 val_min=1, 
+                 val_max=100)
         self.write_uart(modbus_high_addr=0x01, 
                         modbus_low_addr=0x04, 
                         val=val)
@@ -341,7 +286,6 @@ class Gripper(object):
                         val=val,
                         is_read=False)
 
-    # 设置旋转力值
     def set_rot_force(self, 
                       val):
         in_range(val, 
@@ -366,6 +310,77 @@ class Gripper(object):
                  val_max=32767)
         self.write_uart(modbus_high_addr=0x01, 
                         modbus_low_addr=0x09, 
+                        val=val)
+        
+    def init_feedback(self):
+        '''Initialize the feedback.
+
+        Args:
+            None
+
+        Returns:
+            None
+        '''
+
+        rdata = self.write_uart(modbus_high_addr=0x02, 
+                                modbus_low_addr=0x00, 
+                                is_set=False)
+        while rdata == 0:
+            self.init_state()
+            rdata = self.write_uart(modbus_high_addr=0x02, 
+                                    modbus_low_addr=0x00, 
+                                    is_set=False)
+        while rdata == 2:
+            time.sleep(0.1)
+            rdata = self.write_uart(modbus_high_addr=0x02, 
+                                    modbus_low_addr=0x00, 
+                                    is_set=False)
+
+
+    def read_state(self):
+        '''Read the state of the gripper.
+
+        Args:
+            None
+
+        Returns:
+            rdata: The data read from the serial port.
+        '''
+
+        rdata = self.write_uart(modbus_high_addr=0x02, 
+                                modbus_low_addr=0x01, 
+                                is_set=False)
+        return rdata
+
+    def read_pos(self):
+        '''Read the position of the gripper.
+
+        Args:
+            None
+
+        Returns:
+            rdata: The data read from the serial port.
+        '''
+
+        rdata = self.write_uart(modbus_high_addr=0x02, 
+                                modbus_low_addr=0x02, 
+                                is_set=False)
+        return rdata
+        
+    def init_dir(self,
+                 val):
+        '''Initialize the direction.
+
+        Args:
+            val: The value to be set.
+            0 is open, 1 is close.
+
+        Returns:
+            None
+        '''
+
+        self.write_uart(modbus_high_addr=0x03, 
+                        modbus_low_addr=0x01, 
                         val=val)
 
 if __name__ == "__main__":
