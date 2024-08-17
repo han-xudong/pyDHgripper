@@ -4,7 +4,7 @@
 
 ## Description
 
-PyDHgripper is a Python library that allows you to control the DH gripper with Python. The DH gripper is a kind of robot gripper. It is widely used in the field of robot control. This project is based on the Modbus protocol of the DH gripper. The types of DH gripper controlled with this library includes AG-95, DH-3, and PGE series.
+PyDHgripper is a Python library that allows you to control the DH gripper with Python. The DH gripper is a kind of robot gripper. It is widely used in the field of robot control. This project is based on the Modbus protocol of the DH gripper. The types of DH gripper controlled with this library includes AG-95, DH-3, RGD, and PGE series.
 
 ## Hardware Requirements
 
@@ -39,7 +39,7 @@ sudo usermod -aG　dialout {userName}
 reboot
 ```
 
-Here are three types of DH grippers that can be controlled with `pyDHgripper`. For example, to control the AG-95 gripper:
+Several types of DH grippers can be controlled with `pyDHgripper`. For example, to control the AG-95 gripper:
 
 ```python
 from pyDHgripper import AG95
@@ -83,7 +83,7 @@ For more functions, please refer to the source code.
 
 ## Documentation
 
-Here `pyDHgripper` provide user manuals for the DH grippers, including AG-95, DH-3, and PGE series.
+Here `pyDHgripper` provide user manuals for the DH grippers, including AG-95, DH-3, RGD, and PGE series.
 
 [AG Gripper Short Manual (Modbus-RTU)](docs/AG_Gripper_Short_Manual_Modbus-RTU_v2.3.pdf)
 

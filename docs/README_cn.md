@@ -4,7 +4,7 @@
 
 ## 描述
 
-PyDHgripper是一个Python库，允许你用Python控制DH夹爪。DH夹爪是一种广泛应用于机器人控制领域的机器人夹爪。该项目基于Modbus通信协议，可以控制的DH夹爪类型包括AG-95、DH-3和PGE系列。
+PyDHgripper是一个Python库，允许你用Python控制DH夹爪。DH夹爪是一种广泛应用于机器人控制领域的机器人夹爪。该项目基于Modbus通信协议，可以控制的DH夹爪类型包括AG-95、DH-3、RGD和PGE系列。
 
 ## 硬件要求
 
@@ -38,7 +38,7 @@ sudo usermod -aG dialout {userName}
 reboot
 ```
 
-这里有三种可以用 `pyDHgripper`控制的DH夹爪。例如，要控制AG-95夹爪：
+多种DH夹爪可以用 `pyDHgripper`控制。例如，要控制AG-95夹爪：
 
 ```python
 from pyDHgripper import AG95
@@ -82,11 +82,13 @@ gripper.set_vel(val='{VELOCITY}')
 
 ## 文档
 
-`pyDHgripper`提供了多个夹爪的操作说明，包括AG-95、DH-3和PGE系列:
+`pyDHgripper`提供了多个夹爪的操作说明，包括AG-95、DH-3、RGD和PGE系列:
 
 [AG系列操作说明书](AG系列操作说明书_MODBUS_v2.6.pdf)
 
 [DH-3操作说明书](DH-3操作说明书_CAN_v1.1.pdf)
+
+[RGD系列产品操作手册](RGD系列产品操作手册_v2.1.pdf)
 
 [PGE系列驱控一体式产品操作手册](PGE系列驱控一体式产品操作手册_v3.2.pdf)
 
