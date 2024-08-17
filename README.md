@@ -75,6 +75,16 @@ gripper.set_vel(val='{VELOCITY}')
 
 For more functions, please refer to the source code.
 
+## Documentation
+
+Here `pyDHgripper` provide user manuals for the DH grippers, including AG-95, DH-3, and PGE series.
+
+[AG Gripper Short Manual (Modbus-RTU)](docs/AG_Gripper_Short_Manual_Modbus-RTU_v2.3.pdf)
+
+[DH-3 Short Manual](docs/DH-3_Short_Manual_v2.pdf)
+
+[PGE Series Product Operation Manual](docs/PGE_Series_Internal_Controller_Short_Manual_v3.1.pdf)
+
 ## License and Acknowledgement
 
 PyDHgripper is licensed under the MIT License.

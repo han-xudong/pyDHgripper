@@ -33,7 +33,7 @@ sudo usermod -aG dialout {userName}
 reboot
 ```
 
-这里有三种可以用`pyDHgripper`控制的DH夹爪。例如，要控制AG-95夹爪：
+这里有三种可以用 `pyDHgripper`控制的DH夹爪。例如，要控制AG-95夹爪：
 
 ```python
 from pyDHgripper import AG95
@@ -74,6 +74,16 @@ gripper.set_vel(val='{VELOCITY}')
 ```
 
 更多函数，请参考源代码。
+
+## 文档
+
+`pyDHgripper`提供了多个夹爪的操作说明，包括AG-95、DH-3和PGE系列:
+
+[AG系列操作说明书](AG系列操作说明书_MODBUS_v2.6.pdf)
+
+[DH-3操作说明书](DH-3操作说明书_CAN_v1.1.pdf)
+
+[PGE系列驱控一体式产品操作手册](PGE系列驱控一体式产品操作手册_v3.2.pdf)
 
 ## 许可证和致谢
 
