@@ -1,6 +1,6 @@
 # pyDHgripper: Control DH Gripper with Python
 
-[EN] | [[中文](doc/README_cn.md)]
+[EN] | [[中文]](doc/README_cn.md)
 
 ## Description
 
@@ -33,7 +33,8 @@ For Linux, it's needed to set the serial port permission first:
 
 ```bash
 sudo chmod 777 /dev/ttyUSB0
-# For communication box, sudo chmod 777 /dev/ttyACM0
+# For CTS-B1.0,
+# sudo chmod 777 /dev/ttyACM0
 sudo usermod -aG　dialout {userName}
 reboot
 ```
