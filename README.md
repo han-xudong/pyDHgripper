@@ -1,6 +1,6 @@
 # pyDHgripper: Control DH Gripper with Python
 
-[EN] | [[中文]](doc/README_cn.md)
+[EN] | [[中文]](docs/README_cn.md)
 
 ## Description
 
