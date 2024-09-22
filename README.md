@@ -21,6 +21,12 @@ Here is a connection example for AG-95 gripper
 The `pyDHgripper` library supports Python 2.x and Python 3.x. You can install the library using the following command:
 
 ```bash
+pip install pydhgripper
+```
+
+Or you can install the library from the source code:
+
+```bash
 git clone https://github.com/han-xudong/pyDHgripper.git
 cd pyDHgripper
 pip install pip -U
@@ -35,14 +41,14 @@ For Linux, it's needed to set the serial port permission first:
 sudo chmod 777 /dev/ttyUSB0
 # For CTS-B1.0,
 # sudo chmod 777 /dev/ttyACM0
-sudo usermod -aG　dialout {userName}
+sudo usermod -aG dialout {userName}
 reboot
 ```
 
 Several types of DH grippers can be controlled with `pyDHgripper`. For example, to control the AG-95 gripper:
 
 ```python
-from pyDHgripper import AG95
+from pydhgripper import AG95
 
 gripper = AG95(port='/dev/ttyUSB0')
 ```

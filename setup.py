@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
+from os import path
+
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'docs/README.rst'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
     name='pydhgripper',
-    version='0.1.0',
+    version='0.1.2',
     description='Python library for controlling the DH gripper',
+    long_description=long_description,
     packages=find_packages(),
     author='Yu Jie, Xudong Han',
     url='https://github.com/han-xudong/pyDHgripper',
