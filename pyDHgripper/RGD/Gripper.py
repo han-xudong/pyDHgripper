@@ -56,6 +56,7 @@ class Gripper(object):
                                      xorOut=0x0000)
         # Initialize the gripper
         self.init_state()
+    
     def cal_crc(self, 
                 array):
         '''Calculate the CRC.
